@@ -1,0 +1,17 @@
+/microservice-composite/common/*.classpath
+/microservice-composite/common/*.project
+/microservice-composite/common/target
+classes
+.settings
+/microservice-framework/config-server/*.classpath
+target
+/microservice-framework/eureka-server/*.project
+/microservice-framework/*.project
+/microservice-composite/composite-service/.classpath
+/microservice-framework/gateway/.classpath
+/microservice-composite/composite-service/.project
+/microservice-framework/config-server/.project
+*.classpath
+*.factorypath
+/microservice-framework/gateway/.project
+/microservice-framework/hystrix-dashboard/.project

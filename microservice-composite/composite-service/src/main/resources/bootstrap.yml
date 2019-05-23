@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: composite-service
+    index: ${random.long}
+  cloud:
+    config:
+      name: ms-composite-service
+      uri: http://localhost:1888
+      profile: ${ENV_TYPE:dev}
+      label: master
+      fail-fast: true

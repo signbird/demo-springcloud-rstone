@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: ha1
+    
+server:
+  port: 8761
+eureka:
+  server:
+    enable-self-preservation: false #是否开启自我保护模式
+  instance:
+    hostname: eureka
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 10
+  client:
+    registerWithEureka: true #是否向服务注册中心注册自己
+    fetchRegistry: true #是否从eureka服务器获取注册信息，单点false，集群true
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/,http://localhost:8763/eureka/
+      
+      
+ #分别含有eureka.instance和eureka.client相关属性的解释和定义。从中可以看到，registerWithEureka表示是否注册自身到eureka服务器，
+ #因为当前这个应用就是eureka服务器，没必要注册自身，所以这里是false。fetchRegistry表示是否从eureka服务器获取注册信息，同上，这里不需要。
+ #defaultZone就比较重要了，是设置eureka服务器所在的地址，查询服务和注册服务都需要依赖这个地址

@@ -1,0 +1,45 @@
+server:
+    port: 10002
+    tomcat:
+        accept-count: 100000
+        max-connnetions: 100000
+        max-threads: 5000
+        
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    com.demo.gateway: INFO
+    org.springframework: WARN
+
+zuul:
+    host:
+        maxTotalConnections: 100000
+        maxPerRouteConnections: 1000000
+        connect-timeout-millis: 10000
+        socket-timeout-millis: 10000
+    semaphore:
+        max-semaphores: 1000000
+    include-debug-header: false
+    AccessFilter:
+        pre:
+            disable: false
+    LogFilter:
+        pre:
+            disable: false
+    routes:
+        composite-service:
+            path: /apm/**
+            serviceId: composite-service
+            strip-prefix: false
+#        serviceB:
+#            path: /demo/serviceB/**
+#            serviceId: demo-service-B
+#            strip-prefix: false 

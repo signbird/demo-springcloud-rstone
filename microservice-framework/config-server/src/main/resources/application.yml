@@ -1,0 +1,29 @@
+server.port: 1888
+
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers: localhost
+          auto-create-topics: true
+    config:
+      server:
+        git:
+          uri: https://github.com/signbird/springcloud-config.git
+          username: xxx
+          password: xxx
+          searchPaths: '{profile}'
+
+eureka:
+  instance:
+    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      
+management:
+  security:
+    enabled: false

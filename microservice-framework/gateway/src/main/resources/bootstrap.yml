@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: demo-gateway
+    index: ${random.long}
+  cloud:
+    config:
+       name: ms-gateway
+       uri: http://${ENV_CONFIG_IP:localhost}:${ENV_CONFIG_PORT:1888}
+       profile: ${ENV_TYPE:dev}
+       label: master
+       fail-fast: true

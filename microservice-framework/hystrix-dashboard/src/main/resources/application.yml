@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo-hystrix-dashboard
+server:
+  port: 7080
+  
+#进入页面http://localhost:7080/hystrix
+#数据流监控http://localhost:20001/actuator/hystrix.stream
+#界面监控，在http://localhost:7080/hystrix 界面输入http://localhost:20001/actuator/hystrix.stream

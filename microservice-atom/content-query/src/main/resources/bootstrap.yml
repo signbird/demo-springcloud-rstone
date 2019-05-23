@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: content-query
+    index: ${random.long}
+#  cloud:
+#    config:
+#      name: ms-atom-content-query
+#      uri: http://${ENV_CONFIG_IP:10.181.12.4}:${ENV_CONFIG_PORT:30202}
+#      profile: ${ENV_TYPE:dev}
+#      label: master
+#      fail-fast: true
